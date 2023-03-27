@@ -1,6 +1,10 @@
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 
 function Navbar() {
+  const totalItems = useSelector((store) => store.cart.totalItems);
+
   return (
     <nav>
       <NavLink
@@ -21,6 +25,8 @@ function Navbar() {
       >
         Contact
       </NavLink>
+
+      <span> her er redux total amount{totalItems}</span>
     </nav>
   );
 }

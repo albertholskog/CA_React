@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 function Card({ image, title, price, productId }) {
-  console.log(productId);
+  
   return (
     <article>
       <div>
