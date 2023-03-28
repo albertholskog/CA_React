@@ -1,10 +1,11 @@
-import SearchForm from "../components/SearchForm";
+import SearchBar from "../components/SearchBar";
 import ProductList from "../components/ProductList";
+
 function Home() {
   return (
     <main>
-      <SearchForm />
-      <ProductList />
+      <SearchBar />
+      {/* <ProductList /> */}
     </main>
   );
 }

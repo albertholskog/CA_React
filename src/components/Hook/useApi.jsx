@@ -11,7 +11,6 @@ function useApi(url) {
     async function fetchData() {
       try {
         const response = await fetch(url);
-        
         setResponseError(response.ok)
         const json = await response.json();
         setData(json);

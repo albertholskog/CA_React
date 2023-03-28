@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import useApi from "../components/api/UseApi";
+import useApi from "../components/Hook/UseApi";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../features/cart/cartSlice";
 

@@ -1,10 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 const initialState = {
   cartItems: [],
   totalItems: 0,
   totalPrice: 0,
-  isLoading: true,
 };
 
 const cartSlice = createSlice({
@@ -44,15 +43,12 @@ const cartSlice = createSlice({
       const itemToIncrement = state.cartItems.find(
         (item) => item.product.id === id
       );
+      console.log(current(state));
       console.log("Item to increment:", itemToIncrement);
       itemToIncrement.quantity++;
       console.log("Increased item quantity to:", itemToIncrement.quantity);
       state.totalItems++;
       state.totalPrice += itemToIncrement.product.discountedPrice;
-      // const cartItem = state.cartItems.find(
-      //   (item) => item.id === actions.payload.id
-      // );
-      // cartItem.amount = cartItem.amount + 1;
     },
     decrease: (state, actions) => {
       const { id } = actions.payload;
