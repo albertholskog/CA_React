@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { schema } from "./Hook/formHook";
+import { schema } from "../../Hook/formHook";
 
 function ContactForm() {
   const {
@@ -33,9 +33,9 @@ function ContactForm() {
         <p>{errors.subject?.message}</p>
       </div>
       <div>
-        <label htmlFor="massage">Massage</label>
-        <textarea type="text" id="massage" style={{ resize: "none" }}{...register("massage")} />
-        <p>{massage.email?.message}</p>
+        <label htmlFor="message">Message</label>
+        <textarea type="text" id="message" style={{ resize: "none" }}{...register("message")} />
+        <p>{errors.message?.message}</p>
       </div>
       <button type="submit">Send in</button>
     </form>

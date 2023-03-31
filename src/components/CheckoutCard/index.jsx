@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { decrease, increase } from "../features/cart/cartSlice";
+import { decrease, increase } from "../../features/cart/cartSlice";
 
 function CheckoutCard({ id, title, discountedPrice, imageUrl, quantity }) {
   const dispatch = useDispatch();

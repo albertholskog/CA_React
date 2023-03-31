@@ -1,8 +1,8 @@
-import SearchResults from "./SearchResults";
-import useApi from "./Hook/useApi";
+import SearchResults from "../SearchResults";
+import useApi from "../../Hook/useApi";
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
-import "./searchBar.css";
+import styles from "./SearchBar.module.css";
 
 function SearchBar() {
   const [searchTherm, setSearchTherm] = useState("");
@@ -11,26 +11,22 @@ function SearchBar() {
   );
 
   const filteredData = data.filter((product) => {
-    return ( 
-      product.title.toLowerCase().includes(searchTherm.toLowerCase()) ||
-      product.description.toLowerCase().includes(searchTherm.toLowerCase())
-    );
+    return product.title.toLowerCase().includes(searchTherm.toLowerCase());
   });
 
   return (
-    <div>
-      <div className="input-wrapper">
-        <FaSearch className="search-icon" />
+    <section className={styles.container__searchBar}>
+      <div className={styles.input__wrapper}>
         <input
-          className="search-input"
+          className={styles.search__input}
           type="text"
-          placeholder="Search..."
+          placeholder="Search on product"
           value={searchTherm}
           onChange={(e) => setSearchTherm(e.target.value)}
         />
       </div>
       <SearchResults filteredData={filteredData} searchTherm={searchTherm} />
-    </div>
+    </section>
   );
 }
 

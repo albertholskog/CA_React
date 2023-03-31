@@ -1,6 +1,6 @@
-import useApi from "./Hook/useApi";
-import Card from "./Card";
-
+import useApi from "../../Hook/useApi";
+import Card from "../Card";
+import styles from "./ProductList.module.css"
 function ProductList() {
   const { data, isLoading, catchError, responseError } = useApi(
     "https://api.noroff.dev/api/v1/online-shop"
@@ -17,7 +17,7 @@ function ProductList() {
   }
 
   return (
-    <section>
+    <section className={styles.wrapper__card}>
       {data.map((product) => {
         return (
           <Card

@@ -1,17 +1,16 @@
 import { useParams } from "react-router-dom";
-import useApi from "../components/Hook/UseApi";
+import useApi from "../Hook/useApi";
+
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../features/cart/cartSlice";
+import SpecificCard from "../components/SpecificCard";
 
 function SingleProduct() {
-
   // useRedux for add to cart
-  const dispatch = useDispatch()
-   
-
+  const dispatch = useDispatch();
 
   const { productId } = useParams();
-  
+
   const { data, isLoading, catchError, responseError } = useApi(
     `https://api.noroff.dev/api/v1/online-shop/${productId}`
   );
@@ -22,11 +21,26 @@ function SingleProduct() {
   if (catchError) {
     return <div>Error: </div>;
   }
-
   
 
   return (
-    <section>
+    <>
+      <SpecificCard
+        title={data.title}
+        image={data.imageUrl}
+        price={data.price}
+        description={data.description}
+        id={data.id}
+        discountedPrice={data.discountedPrice}
+      />
+    </>
+  );
+}
+
+export default SingleProduct;
+
+{
+  /* <section>
       {
         <div>
           <div>
@@ -48,28 +62,5 @@ function SingleProduct() {
           </div>
         </div>
       }
-    </section>
-  );
-}
-
-export default SingleProduct;
-
-{
-  /* <div>
-        <img src={data.imageUrl} alt="" />
-      </div>
-      <div>
-      <div>
-          <h2></h2>
-          <h3>{data.discountedPrice}</h3>
-      </div>
-      <div>
-          <h3>Product info</h3>
-          <p>{data.description}</p>
-      </div>
-      <div>
-          <button>Add to cart</button>
-          <h3>{data.discountedPrice}</h3>
-      </div>
-    </div>   */
+    </section> */
 }

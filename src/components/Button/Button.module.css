@@ -1,0 +1,18 @@
+.btn {
+  width: 150px;
+  height: 60px;
+  border: none;
+  border-radius: 5px;
+  background: #F5AB53;
+  background: rgb(245,171,83);
+  background: linear-gradient(45deg, rgba(245,171,83,1) 0%, rgba(245,61,2,1) 100%);
+  color: #F7F7F7;
+  font-size: 20px;
+  
+  }
+
+  .btn__card {
+    position: absolute;
+    top: -1.3rem;
+    left: 3.1rem;
+  }

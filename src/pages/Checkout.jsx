@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import CheckoutCard from "../components/CheckoutCard";
-
 function Checkout() {
   
   const { cartItems, totalPrice } = useSelector((store) => {
