@@ -18,15 +18,17 @@ body {
   width: 100%;
   height: 100%;
 }
-button{
-  font-family:Rubik, sans-serif ;
+ p{
+  font-family: Karla, sans-serif;
+  font-weight: 500;
 }
 h1,
 h2,
 h3,
 h4,
-p,
-span, input {
+button,
+span,
+input {
   font-family: Rubik, sans-serif;
   font-weight: 500;
 }

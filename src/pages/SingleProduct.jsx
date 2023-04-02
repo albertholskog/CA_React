@@ -32,6 +32,7 @@ function SingleProduct() {
         description={data.description}
         id={data.id}
         discountedPrice={data.discountedPrice}
+        data={data}
       />
     </>
   );
