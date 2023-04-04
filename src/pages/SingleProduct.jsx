@@ -4,6 +4,7 @@ import useApi from "../Hook/useApi";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../features/cart/cartSlice";
 import SpecificCard from "../components/SpecificCard";
+import ProductReviews from "../components/ProductReviews";
 
 function SingleProduct() {
   // useRedux for add to cart
@@ -21,8 +22,6 @@ function SingleProduct() {
   if (catchError) {
     return <div>Error: </div>;
   }
-  
-
   return (
     <>
       <SpecificCard
@@ -34,6 +33,7 @@ function SingleProduct() {
         discountedPrice={data.discountedPrice}
         data={data}
       />
+      <ProductReviews  reviews={data.reviews}/>
     </>
   );
 }

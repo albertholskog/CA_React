@@ -1,5 +1,11 @@
+import Success from "../components/Success";
+
 function CheckoutSuccess() {
-  return <div>CheckoutSuccess</div>;
+  return (
+    <>
+      <Success />
+    </>
+  );
 }
 
 export default CheckoutSuccess;

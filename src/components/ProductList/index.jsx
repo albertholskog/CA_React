@@ -15,6 +15,7 @@ function ProductList() {
   if (catchError || !responseError) {
     return <div>Error: error</div>;
   }
+  console.log(data);
 
   return (
     <section className={styles.wrapper__card}>

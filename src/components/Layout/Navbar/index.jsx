@@ -8,7 +8,7 @@ import IconMenu from "../../svg/IconMenu";
 import IconClose from "../../svg/IconClose";
 
 import styles from "./Navbar.module.css";
-import SearchBar from "../../SearchBar";
+
 
 function Navbar() {
   const totalItems = useSelector((store) => store.cart.totalItems);

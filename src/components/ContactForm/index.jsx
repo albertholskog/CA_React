@@ -1,7 +1,8 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schema } from "../../Hook/formHook";
-
+import Button from "../Button";
+import styles from "./ContactForm.module.css";
 function ContactForm() {
   const {
     register,
@@ -16,7 +17,10 @@ function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmitHandler)}>
+    <form
+      onSubmit={handleSubmit(onSubmitHandler)}
+      className={styles.container__form}
+    >
       <div>
         <label htmlFor="name">Full name</label>
         <input type="text" id="name" {...register("fullName")} />
@@ -34,10 +38,16 @@ function ContactForm() {
       </div>
       <div>
         <label htmlFor="message">Message</label>
-        <textarea type="text" id="message" style={{ resize: "none" }}{...register("message")} />
+        <textarea
+          type="text"
+          id="message"
+          style={{ resize: "none" }}
+          {...register("message")}
+          rows={"10"}
+        />
         <p>{errors.message?.message}</p>
       </div>
-      <button type="submit">Send in</button>
+      <Button label={"Send in"} />
     </form>
   );
 }
