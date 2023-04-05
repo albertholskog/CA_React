@@ -6,7 +6,7 @@ function Success() {
     <div className={styles.container__success}>
       <h2>Congratulate</h2>
       <h3>Your purchase was successful</h3>
-      <Button label="Continue shopping" link={`/`} />
+      <Button label="Continue shopping" link={`/`} variant="btn__continue" />
     </div>
   );
 }

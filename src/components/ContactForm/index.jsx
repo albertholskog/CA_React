@@ -16,6 +16,10 @@ function ContactForm() {
     console.log(data);
   };
 
+  function handelConfirmation() {
+    alert("Your message has been sent");
+  }
+
   return (
     <form
       onSubmit={handleSubmit(onSubmitHandler)}
@@ -47,7 +51,13 @@ function ContactForm() {
         />
         <p>{errors.message?.message}</p>
       </div>
-      <Button label={"Send in"} />
+      <div className={styles.container__form_btn}>
+        <Button
+          label={"Send in"}
+          variant="btn__form"
+          onClick={handelConfirmation}
+        />
+      </div>
     </form>
   );
 }

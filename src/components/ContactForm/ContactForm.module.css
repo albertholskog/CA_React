@@ -1,19 +1,16 @@
 .container__form {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1.5rem 2.5rem;
   border-radius: 5px;
+  padding: 2rem 0;
   box-shadow: 2px 2px 35px 1px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 2px 2px 35px 1px rgba(1, 1, 1, 0.2);
   -moz-box-shadow: 2px 2px 35px 1px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
 }
 
 .container__form div {
   display: flex;
   flex-direction: column;
+  margin: 0 3rem;
 }
 .container__form div label {
   font-size: 1.25rem;
@@ -26,7 +23,7 @@
 .container__form textarea {
   height: auto;
 }
-.container__form textarea,
+.container__form div textarea,
 .container__form div input {
   font-size: 1rem;
   font-weight: 500;
@@ -36,7 +33,13 @@
   border-radius: 5px;
 }
 
-.container__form p{
-    margin-top: 0.5rem;
-    color: rgb(213, 57, 57);
+.container__form p {
+  margin-top: 0.5rem;
+  color: rgb(213, 57, 57);
+}
+.container__form_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+padding: 2rem;
 }

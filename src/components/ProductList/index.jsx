@@ -1,21 +1,24 @@
 import useApi from "../../Hook/useApi";
 import Card from "../Card";
-import styles from "./ProductList.module.css"
+import styles from "./ProductList.module.css";
+import { InfinitySpin } from "react-loader-spinner";
+
 function ProductList() {
   const { data, isLoading, catchError, responseError } = useApi(
     "https://api.noroff.dev/api/v1/online-shop"
   );
 
-
-
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <InfinitySpin width="200" color="#F5AB53" />
+      </div>
+    );
   }
 
   if (catchError || !responseError) {
-    return <div>Error: error</div>;
+    return <div>Error: 404</div>;
   }
-  console.log(data);
 
   return (
     <section className={styles.wrapper__card}>

@@ -2,8 +2,6 @@ import styles from "./ProductReviews.module.css";
 import IconStar from "../svg/IconStar";
 
 function ProductReviews({ reviews }) {
-  console.log(reviews);
-
   return (
     <section className={styles.wrapper__reviews}>
       <div className={styles.container__review}>

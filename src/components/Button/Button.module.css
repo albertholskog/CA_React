@@ -1,6 +1,6 @@
 .btn {
-  width: 150px;
-  height: 60px;
+  width: 140px;
+  height: 45px;
   border: none;
   border-radius: 5px;
   background: #F5AB53;
@@ -27,6 +27,10 @@
     padding: 0.6rem 1rem;
     margin-bottom: 1rem;
     
+  }
+
+  .btn__continue{
+    width: 200px;
   }
 
   @media only screen and (max-width: 850px) {
