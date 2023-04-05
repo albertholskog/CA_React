@@ -19,13 +19,11 @@ const cartSlice = createSlice({
       );
       if (existingItem) {
         existingItem.quantity += 1;
-        console.log("quantity increased");
       } else {
         state.cartItems = [
           ...state.cartItems,
           { product: actions.payload, quantity: 1 },
         ];
-        console.log("item added");
       }
       state.totalItems = state.cartItems.reduce(
         (total, item) => total + item.quantity,
@@ -53,10 +51,7 @@ const cartSlice = createSlice({
       const itemToIncrement = state.cartItems.find(
         (item) => item.product.id === id
       );
-      console.log(current(state));
-      console.log("Item to increment:", itemToIncrement);
       itemToIncrement.quantity++;
-      console.log("Increased item quantity to:", itemToIncrement.quantity);
       state.totalItems++;
       state.totalPrice += itemToIncrement.product.discountedPrice;
     },
@@ -65,17 +60,14 @@ const cartSlice = createSlice({
       const itemToDecrement = state.cartItems.find(
         (item) => item.product.id === id
       );
-      console.log("Item to decrement:", itemToDecrement);
       if (itemToDecrement.quantity > 1) {
         itemToDecrement.quantity--;
-        console.log("Decreased item quantity to:", itemToDecrement.quantity);
         state.totalItems--;
         state.totalPrice -= itemToDecrement.product.discountedPrice;
       } else {
         state.cartItems = state.cartItems.filter(
           (item) => item.product.id !== id
         );
-        console.log("Removed item from cart");
         state.totalItems--;
         state.totalPrice -= itemToDecrement.product.discountedPrice;
       }
